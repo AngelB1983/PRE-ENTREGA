@@ -14,7 +14,7 @@ body {
     height: 100vh;
     color: aliceblue;
     background: linear-gradient(45deg,#031f2e, #9da5aa, #47768f, #031f2e);
-    background-size: 700% 700%;
+    background-size: 1200% 1200%;
     position: relative;
     animation: color 12s ease-in-out infinite;
 }
@@ -37,8 +37,11 @@ body {
     width: 100%;
     margin: auto;
     background-color: #3a5b6d;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+    padding: 5px 5%;
 }
 
 
@@ -49,31 +52,25 @@ body {
 .header .logo img {
     height: 100px;
     width: auto;
-    margin-left: 100px;
     padding-top: 10px;
     transition: all 0.5s;
     
 }
 
 .header .logo img:hover {
-    transform: scale(1.2);
+    transform: scale(1.4);
 }
 
 
-nav {
+.header .linksnav {
     list-style: none;
-    margin-right: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-   
 }
 
-.header li {
+.header .linksnav li {
     display: inline-block;
     align-items: center;
     justify-content: center;
-    padding: 0 20px;
+    padding: 0 10px;
     
 }
 
@@ -92,27 +89,52 @@ nav {
     color: #84939c;
 }
 
-.section {
-    width: 80%;
+
+section main {
+    width: 80vw;
+    max-width: 1400px;
+    min-width: 320px;
     margin: 20px auto;
-    height: 600px;
-    background: linear-gradient(rgba(3, 10, 32, 0.555), rgba(54, 58, 70, 0.548)), url(./img/a7r.jpg);
-    background-position: center center;
-    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+
+ }
+.img-fondo {
+    width: 100%;
+    border-radius: 10px;
     box-shadow: 9px 2px 30px 1px #031f2e;
+    opacity: 80%;
+    
+}
+
+.div-titulo {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-shadow: 7px 5px #132129;
+    text-align: center;
 }
 
 h1 {
     font-family: "PT Serif", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 5em;
+    font-size: clamp(22px, 4vw + 1em, 200px); 
     color: #ffffff;
-    padding-top: 30px;
-    padding-bottom: 5px;
+    padding-top: 4px;
+    padding-bottom: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
     text-shadow: 7px 5px #132129;
+    text-align: center;
+    
 }
 
 h2 {
@@ -120,17 +142,20 @@ h2 {
     font-weight: 400;
     font-style: normal;
     font-size: 30px;
-    padding: 0px 0 30px 0;
+    padding: 0px 0 16px 0;
     text-align: center;
     color: #ffffff;
     text-shadow: 3px 3px #132129;
+    
 }
 
 .parrafo {
     color: #ffffff;
     padding: 0 5%;
-    font-weight: 600;
+    font-size: clamp(0.2rem, 5vw, 22px);
+    font-weight: 300;
     text-align: center;
+    
 }
 
 /*********MIS SERVICIOS*********/
@@ -144,6 +169,7 @@ h2 {
     padding-top: 40px;
     display: flex;
     justify-content: center;
+    text-align: center;
     text-shadow: 7px 5px #132129;
 }
 
@@ -299,10 +325,10 @@ h2 {
 /**********FOOTER*********/
 
 .footer {
-    position: absolute;
+    position: relative;
     width: 100%;
     background: #032030;
-    height: 250px;
+    min-height: 100px;
     padding: 20px 50px;
     display: flex;
     justify-content: center;
